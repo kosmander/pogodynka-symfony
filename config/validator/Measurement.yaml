@@ -1,0 +1,20 @@
+App\Entity\Measurement:
+    properties:
+        date:
+            - NotBlank: { message: 'Date is required.', groups: ['new', 'edit'] }
+            - Range: { min: 'today', notInRangeMessage: 'Date cannot be in the past.', groups: ['new', 'edit'] }
+        temperature:
+            - NotBlank: { message: 'Temperature is required.', groups: ['new', 'edit'] }
+            - Range: { min: -100, max: 100, notInRangeMessage: 'Temperature must be between {{ min }} and {{ max }}.', groups: ['new', 'edit'] }
+        humidity:
+            - NotBlank: { message: 'Humidity is required.', groups: ['new', 'edit'] }
+            - Range: { min: 0, max: 100, notInRangeMessage: 'Humidity must be between {{ min }} and {{ max }}.', groups: ['new', 'edit'] }
+        pressure:
+            - NotBlank: { message: 'Pressure is required.', groups: ['new', 'edit'] }
+            - Range: { min: 850, max: 1100, notInRangeMessage: 'Pressure must be between {{ min }} and {{ max }}.', groups: ['new', 'edit'] }
+        wind:
+            - NotBlank: { message: 'Wind is required.', groups: ['new', 'edit'] }
+            - Range: { min: 0, max: 500, notInRangeMessage: 'Wind must be between {{ min }} and {{ max }}.', groups: ['new', 'edit'] }
+        precipitation:
+            - NotBlank: { message: 'Precipitation is required.', groups: ['new', 'edit'] }
+            - Range: { min: 0, max: 200, notInRangeMessage: 'Precipitation must be between {{ min }} and {{ max }}.', groups: ['new', 'edit'] }
