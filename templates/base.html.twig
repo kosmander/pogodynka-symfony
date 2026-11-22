@@ -36,6 +36,13 @@
                             <a class="nav-link" href="{{ path('app_measurement_index') }}">Measurements</a>
                         </li>
                     </ul>
+                    <div class="d-flex align-items-center">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class="btn btn-outline-light btn-sm" href="{{ path('app_logout') }}">Logout</a>
+                        {% else %}
+                            <a class="btn btn-light btn-sm" href="{{ path('app_login') }}">Login</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </nav>
